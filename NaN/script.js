@@ -199,80 +199,76 @@
 //   console.log("entrez un nombre");
 // }
 
-
-
-
 // function funsplit(char, separate) {
 //     //  créer une fonction split qui divise une chaine de caractere et la divise en fonction du separateur  @@
 //     let tab = []
 //     let total = "";
-    
+
 //     char = char.replaceAll(separate, ",");
 //     console.log(char)
 //     for (const chr of char) {
-       
+
 //             if(chr != separate){total += chr}
 //             if(chr == separate){
 //                 tab.push(total)
 //                 console.log(tab)
 //                 total == ""
-//             }        
+//             }
 //         }
-        
+
 //         tab.push(total)
-       
+
 //        if(separate == ""){
 //                 tab.pop()
 //                 tab.shift()
 //        }
-   
+
 //         return tab
 // }
 // console.log(funsplit("Bonjour je suis Nanien je suis ivoirien tout le monde", "je"));
 
-
 // function decoupeur(mot, separateur) {
-//     // Va contenir les sous-chaîne qu'on va séparer 
-//     let archive = [];   
-//     // Va recevoir la sous-chaîne 
+//     // Va contenir les sous-chaîne qu'on va séparer
+//     let archive = [];
+//     // Va recevoir la sous-chaîne
 //     let sousChaine = "";
-//     // Par défaut je récupère indice de la sous-chaîne dans le mot 
+//     // Par défaut je récupère indice de la sous-chaîne dans le mot
 //     let indexSousChaine = mot.indexOf(separateur);
 //     console.log(indexSousChaine);
-//     // Si separateur existe dans le mot 
+//     // Si separateur existe dans le mot
 //     while (indexSousChaine > -1 ){
 //         // Si separateur est diferent de chaîne vide
 //         if (separateur != "" ){
-//             // Je récupère les caractères qui se trouve avant la prémière occurance du séparateur 
-//             sousChaine = mot.substr(0, indexSousChaine);
-//             // Dans le mot je remplace la première occurance de séparateur par chaîne vide et je stocke dans mot 
+//             // Je récupère les caractères qui se trouve avant la prémière occurance du séparateur
+//             sousChaine = mot.Slice(0, indexSousChaine);
+//             // Dans le mot je remplace la première occurance de séparateur par chaîne vide et je stocke dans mot
 //             mot = mot.replace(separateur, "");
-//             // Dans le mot je remplace la sous-chaîne à séparer par chaîne vide et je stocke dans mot 
+//             // Dans le mot je remplace la sous-chaîne à séparer par chaîne vide et je stocke dans mot
 //             mot = mot.replace(sousChaine, "");
-//             // J'ajoute la sous-chaine à séparer dans le tableau archive 
+//             // J'ajoute la sous-chaine à séparer dans le tableau archive
 //             archive.push(sousChaine);
-//             // Je recherche à nouveau d'indice du séparateur dans le nouveau mot 
+//             // Je recherche à nouveau d'indice du séparateur dans le nouveau mot
 //             indexSousChaine = mot.indexOf(separateur);
 //         }else{
 //             // Si séparateur est une chaîne vide j'ajoute chaque caractère du mot dans le tableau archive
 //             archive.push(mot[mot.indexOf(separateur)]);
 //             // Je remplace le premier caractère du mot par une chaîne vide
 //             mot = mot.replace(mot[0], "");
-//             // Si le mot contient un seul caractère, 
+//             // Si le mot contient un seul caractère,
 //             if(mot.length === 1 ){
-//                 // j'ajoute immédiatement le mot dans l'archive 
+//                 // j'ajoute immédiatement le mot dans l'archive
 //                 archive.push(mot);
-//                 // Et je sorts systématiquement dans la boucle 
+//                 // Et je sorts systématiquement dans la boucle
 //                 break;
 //             }
 //         }
 //     }
-//     // Si le séparateur n'existe pas dans le mot, 
+//     // Si le séparateur n'existe pas dans le mot,
 //     if (indexSousChaine === -1 ){
-//         // J'ajoute te texte brute dans l'archive 
+//         // J'ajoute te texte brute dans l'archive
 //         archive.push(mot);
 //     }
-//     // Je retourne le tableau archive 
+//     // Je retourne le tableau archive
 //     return archive;
 // }
 
@@ -281,7 +277,6 @@
 // La fonction Slice
 // La focntion Substr
 
-
 // function multi(A) {
 //     let i=1;
 //     multi= ""
@@ -289,7 +284,7 @@
 //         multi+= `${A*i},`
 //         if(i==10){
 //             multi+= `${A*i}`
-//         }   
+//         }
 //         i++
 //     }
 //     return multi
@@ -305,32 +300,117 @@
 //             multi+= `${A*i},`
 //             if(i==10){
 //                 multi+= `${A*i}`
-//             }   
+//             }
 //             i++
 //         }
 //         return parseInt(multi)
-    
+
 //     }
-    
-function countnumbres(stg){
-        let tab = [];
-        let somme = 0;
-        if(stg == "" || stg == 0){
-            return -1
-        }else{
-            for(const i of stg){
-                if(!isNaN(i)){
-                    tab.push(i)
-                }else{
-                    return -1
-                }
-            }
-            for (const j of tab){
-                somme += parseInt(j)                    
-            }
-    
-        }
-        return somme
-        
+
+function contreSplit(stg) {
+  let tab = [];
+  let somme = 0;
+  if (stg == "" || stg == 0) {
+    return -1;
+  } else {
+    for (const i of stg) {
+      if (!isNaN(i)) {
+        tab.push(i);
+      } else {
+        return -1;
+      }
+    }
+    for (const j of tab) {
+      somme += parseInt(j);
+    }
+  }
+  return somme;
 }
 
+//SLICE HOMO
+
+// function Slice(debut, long1, long2) {
+//   // console.log(debut,debut.length);
+//   let subt = "";
+
+//   if (long2 > debut.length) {
+//     long2 = debut.length - 1;
+
+//     for (let i = long1; i <= long2; i++) {
+//       subt += debut[i];
+//     }
+//     console.log("If", subt);
+//   } else {
+//     if (long2 < 0) {
+//       long2 = debut.length + long2;
+//       for (let i = long1; i < long2; i++) {
+//         subt += debut[i];
+//       }
+//       console.log("else If", subt);
+//     } else {
+//       for (let i = long1; i < long2; i++) {
+//         subt += debut[i];
+//       }
+//       console.log("else", subt);
+//     }
+//   }
+// }
+// console.log("Mozilla", Slice("Mozilla", 6, 0));
+// console.log("Mozilla", "Mozilla".slice(6, 0));
+
+// function Substr(debut, long1, long2) {
+//   // console.log(debut,debut.length);
+//   let subt = "";
+
+//   if (long2 > debut.length) {
+//       long2 = debut.length - 1;
+
+//     for (let i = long1; i <= long2; i++) {
+//       subt += debut[i];
+//     }
+//     console.log("If", subt);
+//   } else {
+//     if (long2 < 0) {
+//       long2 = debut.length + long2;
+//       console.log(long2)
+//       for (let i = long1; i < long2; i++) {
+//         subt += debut[i];
+//       }
+//       console.log("else If", subt);
+//     } else {
+//       for (let i = long1; i < long2; i++) {
+//         subt += debut[i];
+//       }
+//       console.log("else", subt);
+//     }
+//   }
+// }
+// console.log("Mozilla", Substr("Mozilla", -5, -1));
+// console.log("Mozilla", "Mozilla".slice(-5, -1));
+
+function Slice(chaine,indDebut, indFin){
+        let outpout = null;
+        // indDebut = indDebut < -(chaine.length) ? 0 : (indDebut > chaine.length ? chaine.length : indDebut)
+        // indFin = indFin < -(chaine.length) ? 0 : (indFin > chaine.length ? chaine.length : indFin)
+            
+
+        
+        
+        if (indDebut > indFin) {
+            return null
+        }else{
+             
+        }
+}
+
+
+
+
+// function Splice(tab,supp,tabAjout) {
+//         delete tab[supp]
+       
+//         console.log(tabAjout)
+//         console.log(tab)
+// }
+
+// console.log(Splice(["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"],2,"add"));
