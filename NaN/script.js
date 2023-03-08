@@ -388,29 +388,78 @@ function contreSplit(stg) {
 // console.log("Mozilla", Substr("Mozilla", -5, -1));
 // console.log("Mozilla", "Mozilla".slice(-5, -1));
 
-function Slice(chaine,indDebut, indFin){
-        let outpout = null;
-        // indDebut = indDebut < -(chaine.length) ? 0 : (indDebut > chaine.length ? chaine.length : indDebut)
-        // indFin = indFin < -(chaine.length) ? 0 : (indFin > chaine.length ? chaine.length : indFin)
-            
+function Slice(chaine, indDebut, indFin) {
+  let outpout = "";
+  indDebut =
+    indDebut < -chaine.length
+      ? 0
+      : indDebut > chaine.length
+      ? chaine.length
+      : indDebut;
+  indFin =
+    indFin < -chaine.length
+      ? 0
+      : indFin > chaine.length
+      ? chaine.length
+      : indFin;
 
-        
-        
-        if (indDebut > indFin) {
-            return null
-        }else{
-             
-        }
+  if (indDebut > indFin) {
+    indDebut = indDebut < 0 ? chaine.length + indDebut : indDebut;
+    indFin = indFin < 0 ? chaine.length + indFin : indFin;
+  }
+
+  for (let i = indDebut; i < indFin; i++) {
+    outpout += chaine[i];
+  }
+
+  console.log("slice =", chaine.slice(indDebut, indFin));
+
+  return outpout;
 }
 
+console.log(Slice("bonjour", 3, 9));
 
+function Substr(chaine, indDebut, indFin) {
+  let outpout = "";
+  indDebut =
+    indDebut < -chaine.length
+      ? 0
+      : indDebut > chaine.length
+      ? chaine.length
+      : indDebut;
+  indFin =
+    indFin < -chaine.length
+      ? 0
+      : indFin > chaine.length
+      ? chaine.length
+      : indFin;
 
+  if (indDebut > indFin) {
+    indDebut = indDebut < 0 ? chaine.length + indDebut : indDebut;
+    indFin = indFin < 0 ? chaine.length + indFin : indFin;
+  }
 
-// function Splice(tab,supp,tabAjout) {
-//         delete tab[supp]
-       
-//         console.log(tabAjout)
-//         console.log(tab)
-// }
+  for (let i = indDebut; i < indFin; i++) {
+    outpout += chaine[i];
+  }
 
-// console.log(Splice(["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"],2,"add"));
+  console.log("Subst =", chaine.substr(indDebut, indFin));
+
+  return outpout;
+}
+
+console.log(Substr("bonjour", 2, 1));
+
+form = document.querySelector("form");
+inp = document.querySelector("bouton");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("Ok", e);
+});
+// btn.addEventListener('mouseout',(e)=>{
+//     console.log(e)
+//     alert('bonjour')
+// })
+
+// console.log(btn)
