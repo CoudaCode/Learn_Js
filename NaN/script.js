@@ -388,78 +388,152 @@ function contreSplit(stg) {
 // console.log("Mozilla", Substr("Mozilla", -5, -1));
 // console.log("Mozilla", "Mozilla".slice(-5, -1));
 
-function Slice(chaine, indDebut, indFin) {
-  let outpout = "";
-  indDebut =
-    indDebut < -chaine.length
-      ? 0
-      : indDebut > chaine.length
-      ? chaine.length
-      : indDebut;
-  indFin =
-    indFin < -chaine.length
-      ? 0
-      : indFin > chaine.length
-      ? chaine.length
-      : indFin;
+// function Slice(chaine, indDebut, indFin) {
+//   let outpout = "";
+//   indDebut =
+//     indDebut < -chaine.length
+//       ? 0
+//       : indDebut > chaine.length
+//       ? chaine.length
+//       : indDebut;
+//   indFin =
+//     indFin < -chaine.length
+//       ? 0
+//       : indFin > chaine.length
+//       ? chaine.length
+//       : indFin;
 
-  if (indDebut > indFin) {
-    indDebut = indDebut < 0 ? chaine.length + indDebut : indDebut;
-    indFin = indFin < 0 ? chaine.length + indFin : indFin;
-  }
+//   if (indDebut > indFin) {
+//     indDebut = indDebut < 0 ? chaine.length + indDebut : indDebut;
+//     indFin = indFin < 0 ? chaine.length + indFin : indFin;
+//   }
 
-  for (let i = indDebut; i < indFin; i++) {
-    outpout += chaine[i];
-  }
+//   for (let i = indDebut; i < indFin; i++) {
+//     outpout += chaine[i];
+//   }
 
-  console.log("slice =", chaine.slice(indDebut, indFin));
+//   console.log("slice =", chaine.slice(indDebut, indFin));
 
-  return outpout;
-}
+//   return outpout;
+// }
 
-console.log(Slice("bonjour", 3, 9));
+// console.log(Slice("bonjour", 3, 9));
 
-function Substr(chaine, indDebut, indFin) {
-  let outpout = "";
-  indDebut =
-    indDebut < -chaine.length
-      ? 0
-      : indDebut > chaine.length
-      ? chaine.length
-      : indDebut;
-  indFin =
-    indFin < -chaine.length
-      ? 0
-      : indFin > chaine.length
-      ? chaine.length
-      : indFin;
+// function Substr(chaine, indDebut, indFin) {
+//   let outpout = "";
+//   indDebut =
+//     indDebut < -chaine.length
+//       ? 0
+//       : indDebut > chaine.length
+//       ? chaine.length
+//       : indDebut;
+//   indFin =
+//     indFin < -chaine.length
+//       ? 0
+//       : indFin > chaine.length
+//       ? chaine.length
+//       : indFin;
 
-  if (indDebut > indFin) {
-    indDebut = indDebut < 0 ? chaine.length + indDebut : indDebut;
-    indFin = indFin < 0 ? chaine.length + indFin : indFin;
-  }
+//   if (indDebut > indFin) {
+//     indDebut = indDebut < 0 ? chaine.length + indDebut : indDebut;
+//     indFin = indFin < 0 ? chaine.length + indFin : indFin;
+//   }
 
-  for (let i = indDebut; i < indFin; i++) {
-    outpout += chaine[i];
-  }
+//   for (let i = indDebut; i < indFin; i++) {
+//     outpout += chaine[i];
+//   }
 
-  console.log("Subst =", chaine.substr(indDebut, indFin));
+//   console.log("Subst =", chaine.substr(indDebut, indFin));
 
-  return outpout;
-}
+//   return outpout;
+// }
 
-console.log(Substr("bonjour", 2, 1));
+// console.log(Substr("bonjour", 2, 1));
 
-form = document.querySelector("form");
-inp = document.querySelector("bouton");
+// form = document.querySelector("form");
+// inp = document.querySelector("bouton");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  console.log("Ok", e);
-});
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   console.log("Ok", e);
+// });
 // btn.addEventListener('mouseout',(e)=>{
 //     console.log(e)
 //     alert('bonjour')
 // })
 
 // console.log(btn)
+
+// function multiply(num, lim){
+
+//     let sum = 0;
+//       if(isNaN(num) || isNaN(lim)){
+//           return -1
+//       }else{
+//           for (let i = 0; i < lim; i++) {
+//                 sum += num*i
+
+//           }
+//           return sum
+//       }
+// }
+
+// console.log(multiply(1, 10));
+
+// function oppOrInv(a,b) {
+//       if(a+b == 0){
+//           return 'oppose'
+//       }else if( a*b == 1){
+//           return 'inverse'
+//       }else{
+//         return 'ok'
+//       }
+// }
+
+// console.log(oppOrInv(1,-1))
+
+// console.log(oppOrInv(2, 1/2))
+
+// console.log(oppOrInv(1,2))
+
+// function uppercaseCount(sentence) {
+//       let num = 0;
+//       for (let i = 0; i < sentence.length; i++) {
+//         if (sentence[i] == sentence[i].toUpperCase()){
+//           num += 1;
+//         }
+
+//       }
+//       return num
+// }
+
+// console.log(uppercaseCount("AejlnbMPe s"))
+// var character = 'a';
+// if (character == character.toUpperCase()) {
+//    alert ('upper case true'); }
+// if (character == character.toLowerCase()){
+//   alert ('lower case true'); }
+
+// function moyenne(tab)
+// {
+//          let moyenne = 0;
+
+//   for (let i = 0; i < tab.length; i++) {
+
+//         moyenne += tab[i];
+//   }
+
+//         return moyenne/ tab.length;
+// }
+
+// console.log(moyenne([1,2,3,4,5]))
+// function fact(nbr)
+// {
+//   // Si nbr = 0 la factorielle retournera 1
+//   if (nbr === 0)
+//   {
+//      return 1;
+//   }
+//   // appelez à nouveau la procédure récursive
+//   return nbr * fact(nbr-1);
+// }
