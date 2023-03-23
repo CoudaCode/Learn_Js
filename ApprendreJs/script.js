@@ -1,92 +1,91 @@
-// btn = document.querySelector('button');
-// para = document.querySelector('p');
+// Function qui retourne une autre fonction(callback)
 
-// // btn.addEventListener('mouseover', (e)=>{
 
-// //   inp.value = "JE suis Nanien"
-// //   para.textContent = "JE suis Nanien".split('').reverse().join('');
-// // })
+function usingCallac(params) {
+        params()
+}
 
-// // inp.addEventListener('input',(e)=>{
+usingCallac(function() {
+  console.log('bonjour fonction callback');
+})
 
-// //     para.textContent = e.target.value.split('').reverse().join('');
 
-// // })
-//Creation d'element html en entrant des donnés dans le input
+// Fonction MAP effectue une action sur chaque element et retourne un nouveau tableau avec a chaque fois l'action qui aura ete effectuer
 
-// let tab =[1,2,3,4,5,6]
 
-// function customForEach(demo, callback){
-//   for (let i = 0; i < tab.length; i++) {
-//     callback(tab[i])
-//   }
-// }
-// customForEach(tab,(item)=>{
 
-// console.log(item)
-/* A>div>contenu>{"width":"200px", "height":"200px","backgroundColor":"red","textAlign
-":"center"}*/
-inp = document.querySelector("input");
-content = document.querySelector(".content");
+// let tab =[1,2,3,4];
 
-inp.addEventListener("keyup", (e) => {
-  let enter = e.keyCode;
-  console.log(enter)
-  if (enter === 13) {
-    tab = e.target.value.split(">");
-    let tell = JSON.parse(tab[3])
-    console.log(tab[3])
-    // console.log(typeof(Style))
-      switch (tab[0]){
-        case "A":
-                  if(content.querySelector(tab[1])) {
-                      alert('Vous ne pouvez pas ajouter un' + tab[1] )
-                  }else{
-                      element = document.createElement(tab[1]);
-                      element.textContent = tab[2]
-                      for (const tem in tell){
-                          console.log([tem]);
-                          console.log(tell[tem]);
-                          element.style[tem] = tell[tem];
-                          console.log(element.style)
-                          
-                      }
-                      content.appendChild(element)
-                  }
-                  
-          break;
-          case "U":
-              if (content.querySelector(tab[1])){
-                for(let tem in tell){
-                    content.querySelector(tab[1]).style[tem] =tell[tem];
-                }
+// let numTab = tab.map(el =>{
+//   return el + 2
+// })
 
-                content.querySelector(tab[1]).textContent = tab[2]
-            }
-            break;
+// console.log(numTab);
 
-            case "D":
-              if(content.querySelector(tab[1])){
-                    content.remove(tab[1]);
-            }else{
-                  console.log('no exist')
-            }
-            break;
-        default:
-          break;
-    }
-  }
 
+// Retourne un tableau d'element respectant les conditions passé en parametre de la fonction callBack
+
+// let tabfilter =[1,2,3,4];
+
+// let numFilter = tabfilter.filter(function(el){
+//   return el > 2
+// })
+
+// console.log(numFilter);
+
+
+// recuce Methode permet de reduire les elemznt d1 tableau en accumulant les valeur
+
+
+// let reduced =[1,2,3,4];
+
+// let NumReduce = reduced.reduce(function(a,b){
+//   return a+b
+// })
+// a = accumulateur qui par defaut est à 0
+// b = la valeur courante commencant par le premier element du tableau
+
+
+
+// console.log(NumReduce);
+
+
+// Supprimer un element dans un objet 
+
+// const obj = {
+//   race : 'aligator',
+//   poids :'ligne',
+//   diara:10}
+
+// const obj2 = obj
+
+// obj2.race = "chien"
+
+// console.log(obj, obj2)
+
+
+// function integerOnly(tab){
+
+//   const listes = []
+//     if(!Array.isArray(tab) ){
+//         return -1
+//     }else{
+//       for (let i = 0; i < tab.length; i++) {
+//             listes.push(tab[i])
+        
+//       }
+//       return listes
+//     }    
  
-});
+// }
 
+// console.log( integerOnly([1,2,3,4]))
 
+// console.log( integerOnly(1))
 
-// page form
-// localStorage.setItem('admin', JSON.stringify([{nom:"koko",prenom:"marie"}]))
+function count_number(nombre){
+  return nombre.length
+ 
+}
 
-// // page pour affiche
-// let re = JSON.parse(localStorage.getItem('admin'));
-
-// console.log(re["nom"])
-
+console.log(count_number(1234))
