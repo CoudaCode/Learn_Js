@@ -541,7 +541,7 @@ function contreSplit(stg) {
 
 
 // progress = document.querySelector('.progress')
-// btn = document.querySelector('.btn')
+// btn = document.querySelector('.button')
 
 // let countSecond = 5;
 // let count = 0;
@@ -592,3 +592,37 @@ async function foo(){  //Async retourne une fonction qui s'auto resoud
 }
 
 foo()
+
+
+
+// API
+
+
+liste = document.querySelector('.liste')
+btn = document.querySelector('.btn')
+const xhr = new XMLHttpRequest(); // Creation de la requete XHR
+
+btn.addEventListener('click', function(){
+
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts') // Utilistaion de la methode Get pour recuperer les donnes
+xhr.responseType = 'json' // Changer les Valeur de la reponse en JSON
+xhr.onload = function(){ //Au chargement de la Requete
+  console.log(xhr.response) //LA donnes sont afficher 
+
+    for (let i = 0; i < 2; i++) {
+      
+      
+        li = `<li>
+                <h2>${xhr.response[i].title}</h2>
+                <p>${xhr.response[i].body}</p>
+              </li>
+                `
+        liste.innerHTML += li
+         
+    }
+
+}
+
+xhr.send() // Execute la requete
+})
+ 
