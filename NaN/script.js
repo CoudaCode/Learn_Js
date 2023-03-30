@@ -537,3 +537,58 @@ function contreSplit(stg) {
 //   // appelez à nouveau la procédure récursive
 //   return nbr * fact(nbr-1);
 // }
+
+
+
+// progress = document.querySelector('.progress')
+// btn = document.querySelector('.btn')
+
+// let countSecond = 5;
+// let count = 0;
+// let timer = setInterval(function(){
+//       count++;
+//       if (count > 5) {
+         
+//         clearInterval(timer)
+//       }else{
+        
+//       }
+// },)
+
+
+
+
+// Creation de la promesse 
+const promise = new Promise((resolve, reject)=>{
+      // resolve('succes')
+      let dec = true
+
+      if (dec) {
+          resolve("les donnes sont recuperer") // Affiche le Resolve quand la condtion est true
+      }else if(reject){
+        reject("les donnes ne sont pas recuperer") // Affiche le Reject quand la condtion est false
+      }else{
+        console.log('finalement')
+      }
+}).then((value)=>{ //Execute le code du resolve
+  console.log(value)
+}).catch((value)=>{ //Execute le code du reject
+  console.log(value)
+}).finally((log)=>{  //Execute le code ormis resolve et reject
+  // console.log(log)
+})
+
+console.log(promise)
+
+
+
+async function foo(){  //Async retourne une fonction qui s'auto resoud
+
+  const P1 = new Promise((resolve, reject)=>{
+        setTimeout(resolve('Affection Effectue'), 1000);
+  })
+      let resul = await P1; // Await attend le resultat de la promesse et la stocke dans la variable resulte
+      console.log(resul)
+}
+
+foo()

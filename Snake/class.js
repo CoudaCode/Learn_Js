@@ -6,7 +6,7 @@ class Snake {
   changeDirection(code) {
     this.direction = code;
   }
-  Move(increX, increY) {
+  Move(increX, increY){
     let [x, y] = this.body[this.body.length - 1];
     this.body.shift();
     this.body.push([x + this.increX, y + this.increY]);

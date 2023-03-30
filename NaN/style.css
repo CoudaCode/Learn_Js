@@ -1,0 +1,15 @@
+.progress{
+    width: 500px;
+    height: 50px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    
+}
+
+.child{
+  width: 50%;
+    height: 100%;
+    
+}
