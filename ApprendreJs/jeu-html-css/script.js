@@ -1,17 +1,17 @@
 // btn = document.querySelector('button');
 // para = document.querySelector('p');
 
-// // btn.addEventListener('mouseover', (e)=>{
+//  btn.addEventListener('mouseover', (e)=>{
 
-// //   inp.value = "JE suis Nanien"
-// //   para.textContent = "JE suis Nanien".split('').reverse().join('');
-// // })
+//    inp.value = "JE suis Nanien"
+//    para.textContent = "JE suis Nanien".split('').reverse().join('');
+//  })
 
-// // inp.addEventListener('input',(e)=>{
+//  inp.addEventListener('input',(e)=>{
 
-// //     para.textContent = e.target.value.split('').reverse().join('');
+//      para.textContent = e.target.value.split('').reverse().join('');
 
-// // })
+//  })
 //Creation d'element html en entrant des donnés dans le input
 
 // let tab =[1,2,3,4,5,6]
@@ -24,6 +24,7 @@
 // customForEach(tab,(item)=>{
 
 // console.log(item)
+
 /* A>div>contenu>{"width":"200px", "height":"200px","backgroundColor":"red","textAlign
 ":"center"}*/
 inp = document.querySelector("input");

@@ -464,19 +464,7 @@ function contreSplit(stg) {
 
 // console.log(btn)
 
-// function multiply(num, lim){
 
-//     let sum = 0;
-//       if(isNaN(num) || isNaN(lim)){
-//           return -1
-//       }else{
-//           for (let i = 0; i < lim; i++) {
-//                 sum += num*i
-
-//           }
-//           return sum
-//       }
-// }
 
 // console.log(multiply(1, 10));
 
@@ -518,12 +506,12 @@ function contreSplit(stg) {
 // {
 //          let moyenne = 0;
 
-//   for (let i = 0; i < tab.length; i++) {
+//          for (let i = 0; i < tab.length; i++) {
 
-//         moyenne += tab[i];
+//          moyenne += tab[i];
 //   }
 
-//         return moyenne/ tab.length;
+//          return moyenne/ tab.length;
 // }
 
 // console.log(moyenne([1,2,3,4,5]))
@@ -538,91 +526,89 @@ function contreSplit(stg) {
 //   return nbr * fact(nbr-1);
 // }
 
+progress = document.querySelector(".progress");
+child = document.querySelector(".child");
+btn = document.querySelector(".button");
+let parentLength = 200;
+let countSecond = 500;
+let count = 0;
+
+window.addEventListener("DOMContentLoaded", function () {
+        btn.addEventListener('click',function(){
+          
+          progress.style.width = `${parentLength}px`
+          let selfWidth = parentLength/countSecond
+          let timer = setInterval(function () {
+            count++;
+            if (count > countSecond) {
+              clearInterval(timer);
+            } else {
+              child.style.width = `${count*selfWidth}px`
+            }
+          },5000/countSecond);
+        })
+});
 
 
-// progress = document.querySelector('.progress')
-// btn = document.querySelector('.button')
 
-// let countSecond = 5;
-// let count = 0;
-// let timer = setInterval(function(){
-//       count++;
-//       if (count > 5) {
-         
-//         clearInterval(timer)
+// // Creation de la promesse
+// const promise = new Promise((resolve, reject)=>{
+//       // resolve('succes')
+//       let dec = true
+
+//       if (dec) {
+//           resolve("les donnes sont recuperer") // Affiche le Resolve quand la condtion est true
+//       }else if(reject){
+//         reject("les donnes ne sont pas recuperer") // Affiche le Reject quand la condtion est false
 //       }else{
-        
+//         console.log('finalement')
 //       }
-// },)
+// }).then((value)=>{ //Execute le code du resolve
+//   console.log(value)
+// }).catch((value)=>{ //Execute le code du reject
+//   console.log(value)
+// }).finally((log)=>{  //Execute le code ormis resolve et reject
+//   // console.log(log)
+// })
 
+// console.log(promise)
 
+// async function foo(){  //Async retourne une fonction qui s'auto resoud
 
+//   const P1 = new Promise((resolve, reject)=>{
+//         setTimeout(resolve('Affection Effectue'), 1000);
+//   })
+//       let resul = await P1; // Await attend le resultat de la promesse et la stocke dans la variable resulte
+//       console.log(resul)
+// }
 
-// Creation de la promesse 
-const promise = new Promise((resolve, reject)=>{
-      // resolve('succes')
-      let dec = true
-
-      if (dec) {
-          resolve("les donnes sont recuperer") // Affiche le Resolve quand la condtion est true
-      }else if(reject){
-        reject("les donnes ne sont pas recuperer") // Affiche le Reject quand la condtion est false
-      }else{
-        console.log('finalement')
-      }
-}).then((value)=>{ //Execute le code du resolve
-  console.log(value)
-}).catch((value)=>{ //Execute le code du reject
-  console.log(value)
-}).finally((log)=>{  //Execute le code ormis resolve et reject
-  // console.log(log)
-})
-
-console.log(promise)
-
-
-
-async function foo(){  //Async retourne une fonction qui s'auto resoud
-
-  const P1 = new Promise((resolve, reject)=>{
-        setTimeout(resolve('Affection Effectue'), 1000);
-  })
-      let resul = await P1; // Await attend le resultat de la promesse et la stocke dans la variable resulte
-      console.log(resul)
-}
-
-foo()
-
-
+// foo()
 
 // API
 
+// liste = document.querySelector('.liste')
+// btn = document.querySelector('.btn')
+// const xhr = new XMLHttpRequest(); // Creation de la requete XHR
 
-liste = document.querySelector('.liste')
-btn = document.querySelector('.btn')
-const xhr = new XMLHttpRequest(); // Creation de la requete XHR
+// btn.addEventListener('click', function(){
 
-btn.addEventListener('click', function(){
+// xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts') // Utilistaion de la methode Get pour recuperer les donnes
+// xhr.responseType = 'json' // Changer les Valeur de la reponse en JSON
+// xhr.onload = function(){ //Au chargement de la Requete
+//   console.log(xhr.response) //LA donnes sont afficher
 
-xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts') // Utilistaion de la methode Get pour recuperer les donnes
-xhr.responseType = 'json' // Changer les Valeur de la reponse en JSON
-xhr.onload = function(){ //Au chargement de la Requete
-  console.log(xhr.response) //LA donnes sont afficher 
+//     for (let i = 0; i < 2; i++) {
 
-    for (let i = 0; i < 2; i++) {
-      
-      
-        li = `<li>
-                <h2>${xhr.response[i].title}</h2>
-                <p>${xhr.response[i].body}</p>
-              </li>
-                `
-        liste.innerHTML += li
-         
-    }
+//         li = `<li>
+//                 <h2>${xhr.response[i].title}</h2>
+//                 <p>${xhr.response[i].body}</p>
+//               </li>
+//                 `
+//         liste.innerHTML += li
 
-}
+//     }
 
-xhr.send() // Execute la requete
-})
- 
+// }
+
+// xhr.send() // Execute la requete
+// })
