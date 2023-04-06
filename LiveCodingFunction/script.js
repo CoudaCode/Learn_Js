@@ -156,3 +156,38 @@ let tab = [];
 }
 
 console.log(multi(10));
+
+
+
+function countVowels(chaine){
+  if (typeof(chaine) !== 'string') {
+      return -1
+  } else {
+    let cpt = 0;
+      let Voyell = ['a','o','i','e','u','y','A','O','I','E','U','Y']
+      for (let ind = 0; ind < chaine.length; ind++) {
+          for (let index = 0; index < Voyell.length ; index++) {
+            if (chaine[ind] == Voyell[index]) {
+                  cpt += 1;
+            }
+          }
+
+       }
+
+       return cpt
+   }
+}
+
+console.log(countVowels('aebdsmopd'))
+console.log(countVowels('Qoopozzjhqsdvh'))
+console.log(countVowels('Axscvqcs,cdsjgdkk123'))
+
+function countnumbers(chaine){
+   if (typeof(chaine) !== 'string') {
+       return -1
+   }else{
+       let num = chaine.split('') ;
+       let numbr = num.filter(lem => !isNaN(lem))
+   }
+  }
+console.log(countnumbers('4r4'))

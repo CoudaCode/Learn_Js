@@ -167,7 +167,6 @@ range.addEventListener('change',(e)=>{
 
 
 
-
 // CASINO
 // let time = 200;
 // var casino = document.querySelector('.casino');
@@ -177,31 +176,25 @@ range.addEventListener('change',(e)=>{
 // var inter = null;
 // var Compt = 1
 // let timeCount = 80;
-
 // let inter2 = null
 
 
 
 // decompte(timeCount)
-
-
 //  while(timeCount < 200){
-//     clearTimeout = inter2
-// //    inter2 = setTimeout(()=>{
-// //         // decompte(timeCount)
-// //         timeCount += 20
-// //      },Compt*3000)
-    
-// //      console.log(timeCount);
-// //      Compt++
+//    clearTimeout = inter2
+//    inter2 = setTimeout(()=>{
+//         // decompte(timeCount)
+//         timeCount += 20
+//      },Compt*3000) 
+//      console.log(timeCount);
+//      Compt++
 // }
 
- //////// utilisation de fonction recursive
 
-
+// utilisation de fonction recursive
 
 // function decompte(time){
-
 //     // clearInterval(inter)
 //     inter = setInterval(()=>{
 //         casino.textContent = tab[count]
@@ -209,13 +202,9 @@ range.addEventListener('change',(e)=>{
 //         if(count == 6){
 //             count = 0
 //         }
-        
-
 //     }, time)
-
 //     decompte(time+110)
 // }
-
 // decompte(timeCount)
 
 
@@ -224,7 +213,7 @@ range.addEventListener('change',(e)=>{
 
 // diara
 // Fonction recursive
-
+/*
 let number = document.querySelector('#number')
 let text = document.querySelector('#text')
 console.log(text)
@@ -238,11 +227,11 @@ function fact(nbr)
   }
   return nbr * fact(nbr-1);
 }
-
-
 number.addEventListener('input',(e)=>{
     let number = e.target.value;
     console.log(e.target.value)
     text.textContent = "text"
 })
 console.log(number)
+
+*/

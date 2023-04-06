@@ -1,115 +1,82 @@
 //SNAKE
+let score = document.querySelector('.score')
+let count = 0;
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d')
+const snake = new Snake([[2,3],[3,3],[4,3],[5,3],[6,3]]);
+const apple = new Apple(7,5);
+const pests = [ new Apple(2,3,true),new Apple(8,3,true), new Apple(10,15,true)]
+snake.drawn(context)
 
-// var canvas = document.querySelector('#canvas')
 
-// var bigObj = {
-//       widthSquare : 20,
-//       heightSquare: 20,
-//       x : 1,
-//       y:1,
-//       direction:39,
-//       increX : 1,
-//       increY :0,
-//       snake : [ [2,3],[3,3],[4,3],[5,3],[6,3]],
-//       context : canvas.getContext('2d'),
-//       MoveSnacke(){
-//         let [x, y] = this.snake[this.snake.length - 1];
-//         this.snake.shift()
-//         this.snake.push([x+this.increX,y+this.increY])
-//       },
+window.addEventListener("keyup",function(e){
+  snake.change_direction(e.keyCode)
+})
+let inter = setInterval(()=>{
+  if(snake.checkCollission() || snake.body.length == 1){
+    clearInterval(inter);
+    alert("GAME OVER")
+  }
+context.clearRect(0,0,canvas.width,canvas.height)
 
-//       drown(time){
-//         context.cletabect(0,0,canvas.width, canvas.height);
 
-//           for (let i = 0; i < time.length; i++) {
-//             const [x, y] = time[i]
-//             context.fillStyle = "orange"
-//             context.fillRect(x*this.widthSquare,y*this.heightSquare, this.widthSquare, this.heightSquare)
-//         }
+  let isEatPest = snake.eatPest(pests)
+  if (isEatPest) {
+    count -= 10
+    snake.grow(false)
+    isEatPest.change_position(snake.body,[...pests,apple],canvas.height,canvas.width)
+  }
 
-//       }
+  let iseatApple = snake.eatApple(apple.x,apple.y)
+ if(iseatApple){
+    count += 10
+    snake.grow(true)
+    apple.change_position(snake.body,[...pests,apple],canvas.height,canvas.width)
 
-// }
+ }
+ apple.drawn(context);  // Dessine la pomme
 
-// console.log(canvas)
+  pests.forEach(element => { // Dessine les pommes violets
+  element.drawn(context)
+});
+ snake.drawn(context);  // Dessine le serpent
 
-// console.log(bigObj.snake)
 
+ snake.Move(canvas.width,canvas.height);
+
+ score.innerText = count
+
+},200)
+// var canvas = document.querySelector("#canvas");
 // var context = canvas.getContext('2d')
-// context.fillStyle = "yellow";
-// context.fillRect(bigObj.x*bigObj.widthSquare, bigObj.y*bigObj.heightSquare, bigObj.widthSquare,bigObj.heightSquare);
 
-/*
-  fillRect(x, y, largeur, hauteur)
-*/
-// function drown(time){
-//   context.clearRect(0,0,canvas.width, canvas.height);
 
-//     for (let i = 0; i < time.length; i++) {
-//       const [x, y] = time[i]
-//       context.fillStyle = "orange"
-//       context.fillRect(x*bigObj.widthSquare,y*bigObj.heightSquare, bigObj.widthSquare, bigObj.heightSquare)
-//   }
+// context.beginPath()
+// context.strokeStyle = "blue"
+// context.moveTo(20,20);
+// context.lineTo(200,20);
+// context.stroke();
 
-// }
 
-// Par defaut le
-// setInterval(()=>{
+// context.beginPath()
+// context.strokeStyle = "green"
+// context.moveTo(20,20);
+// context.lineTo(120,120);
+// context.stroke();
 
-// snake.shift();
-// snake.push([last[0]+1,last[1]])
 
-//       bigObj.MoveSnacke()
-//       bigObj.drown(bigObj.snake)
 
-// },500)
 
-// bigObj.drown(bigObj.snake)
 
-// function MoveSnacke(){
-//   let [x, y] = bigObj.snake[bigObj.snake.length - 1 ];
-//   bigObj.snake.shift()
-//   bigObj.snake.push([x+bigObj.increX,y+bigObj.increY])
-// }
 
-// function changedirection(keyCode){
 
-//             if (keyCode == 39 && bigObj.direction != 37) {
-//                     bigObj.increX = 1 ;
-//                     bigObj.increY = 0;
-//                     bigObj.direction = keyCode;
-//             }
-//             if (keyCode == 37 && bigObj.direction != 39){
-//                        bigObj.increX = -1;
-//                        bigObj.increY = 0;
-//                        bigObj.direction = keyCode;
 
-//             }
-//             if (keyCode == 38 && bigObj.direction != 40){
-//                       bigObj.increX = 0;
-//                       bigObj.increY = -1;
-//                       bigObj.direction = keyCode;
-//             }
-//             if (keyCode == 40 && bigObj.direction != 39){
-//                       bigObj.increX = 0;
-//                       bigObj.increY = 1;
-//                       bigObj.direction = keyCode;
-//             }
-
-//             bigObj.direction = keyCode;
-
-// }
-
-// document.addEventListener('keyup',(e)=>{
-//   changedirection(e.keyCode)
-// })
-
-// const obj = {
-//     bonjour : 2,
-//     bonsoir : 4,
-//     funct : function(nbr){
-//       console.log(this.bonjour + nbr)
-//     }
+//  const obj = {
+//      bonjour : 2,
+//      bonsoir : 4,
+//      funct : function(nbr){
+//        console.log(this.bonjour + nbr)
+//}
 
 // }
 // console.log(this)
@@ -278,38 +245,3 @@
 
 /******************************** Expressions regulières **************************************/
 
-// function countVowels(chaine){
-//     if (typeof(chaine) !== 'string') {
-//         return -1
-//     } else {
-//       let cpt = 0;
-//         let Voyell = ['a','o','i','e','u','y','A','O','I','E','U','Y']
-//         for (let ind = 0; ind < chaine.length; ind++) {
-//             for (let index = 0; index < Voyell.length ; index++) {
-//               if (chaine[ind] == Voyell[index]) {
-//                     cpt += 1;
-//               }
-//             }
-
-//         }
-
-//         return cpt
-//     }
-// }
-
-// console.log(countVowels('aebdsmopd'))
-// console.log(countVowels('Qoopozzjhqsdvh'))
-// console.log(countVowels('Axscvqcs,cdsjgdkk123'))
-
-
-
-// function countnumbers(chaine){
-//     if (typeof(chaine) !== 'string') {
-//         return -1
-//     }else{
-//         let num = chaine.split('') ;
-//         let numbr = num.filter(lem => !isNaN(lem))
-//     }
-// }
-
-// console.log(countnumbers('4r4'))
