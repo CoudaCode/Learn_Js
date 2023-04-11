@@ -7,12 +7,16 @@ class Snake {
     this.heightSquare = 20;
     this.incre_x = 1;
     this.incre_y = 0;
+    this.countApple = 0;
   }
 
-  // Drawn :fonction pour dessiner le serpent
+
+  
+ 
+//Drawn :fonction pour dessiner le serpent
   drawn(context) {
     // context.clearRect(0,0,canvas.width, canvas.height);
-
+    
     for (let i = 0; i < this.body.length; i++) {
       const [x, y] = this.body[i];
       context.fillStyle = "orange";
@@ -112,15 +116,16 @@ class Snake {
 
 class Apple{
     constructor(x,y, pest){
-      this.x = x
-      this.y = y
-      this.widthSquare = 20
-      this.heightSquare = 20
-      this.pest = pest
+      this.x = x;
+      this.y = y;
+      this.widthSquare = 20;
+      this.heightSquare = 20;
+      this.pest = pest;
+      this.isSuper = false;
     }
 
     drawn(context){
-        let rayon = this.widthSquare/2
+        let rayon = this.isSuper ? this.widthSquare : this.widthSquare/2
         context.beginPath() //Demarre un nouveau chemin en vidant le precedant chemin (facile la création de dessin en créant de nouveau champ)
         context.arc(this.x * this.widthSquare+rayon,this.y * this.heightSquare+rayon,rayon,0,Math.PI*2,false) //Permet dessiner un cercle 
         

@@ -23,6 +23,7 @@ context.clearRect(0,0,canvas.width,canvas.height)
   let isEatPest = snake.eatPest(pests)
   if (isEatPest) {
     count -= 10
+    snake.countApple = 0
     snake.grow(false)
     isEatPest.change_position(snake.body,[...pests,apple],canvas.height,canvas.width)
   }
@@ -30,8 +31,19 @@ context.clearRect(0,0,canvas.width,canvas.height)
   let iseatApple = snake.eatApple(apple.x,apple.y)
  if(iseatApple){
     count += 10
+    if (!apple.isSuper) {
+        snake.countApple += 1
+        if(snake.countApple == 5){
+            apple.isSuper = true;
+            snake.countApple = 0;
+        }
+    }else{
+        apple.isSuper = false
+    }
     snake.grow(true)
     apple.change_position(snake.body,[...pests,apple],canvas.height,canvas.width)
+    
+   
 
  }
  apple.drawn(context);  // Dessine la pomme
