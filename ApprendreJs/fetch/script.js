@@ -170,6 +170,7 @@ window.addEventListener('DOMContentLoaded',async() =>{
     var prevPage = 3;
  
     async function request(page){
+        console.log('nmbr',page)
        let resul =  await fetch(`${API_BASE}/discover/movie?api_key=${API_KEY}&page=${page}`)
        console.log(resul);
        let nouvel = await resul.json();
@@ -181,16 +182,16 @@ window.addEventListener('DOMContentLoaded',async() =>{
         const maVar = document.createElement('A');
         maVar.href = `details.html#${boucl[i].id}`;
         maVar.classList.add('cadre')
-          maVar.innerHTML = `
-            <img src="${IMG_URL+boucl[i].poster_path}" alt="">
-            <div class="tittle">
-            <p>>${boucl[i].original_title}</p>
-            <span class="green">${boucl[i].release_date}</span>
-            </div>
-            <div class="percent">
-            <span class="green">9.8%</span>
-            </div>
-         `;
+        maVar.innerHTML = `
+        <img src="${IMG_URL+boucl[i].poster_path}" alt="">
+        <div class="tittle">
+        <p>${boucl[i].original_title}</p>
+        <span class="green">${boucl[i].release_date}</span>
+        </div>
+        <div class="percent">
+        <span class="green">9.8%</span>
+        </div>
+        `;
        contr.appendChild(maVar)
     }
     }
@@ -205,22 +206,26 @@ window.addEventListener('DOMContentLoaded',async() =>{
     next.addEventListener('click',(e)=>{
      contr.innerHTML = " ";
      if(e.target){
+        console.log(page);
        let id = e.target.id;
        console.log(id);
        page+= parseInt(id)
-      request(page);
+       console.log('plus', page);
+       request(page);
     }
  
     })
  
     prev.addEventListener('click',(e)=>{
 
- 
-       if(e.target){ 
+        contr.innerHTML = " ";
+       if(e.target){
+         console.log('demo',page);
          let net = e.target.id;
-         console.log(net );
-         page -= parseInt(net)
-        request(page);
+        //console.log(net);
+         page-= parseInt(net)
+        //console.log('moins',page)
+         request(page);
       }
    
       })
