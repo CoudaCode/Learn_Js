@@ -154,81 +154,101 @@
 //                  })
 // }) 
 
+const contr = document.querySelector('.container')
+const next = document.querySelector('.next')
+const prev = document.querySelector('.prev')
+const current = document.querySelector('.current')
+let API_KEY = `e23e367891fdc74e9e44aede23878548`
+let API_BASE = `https://api.themoviedb.org/3`
+const IMG_URL = 'https://image.tmdb.org/t/p/w500'
+let count = 1;
+let page = 1;
+var curentPage = 1;
+var nextPage = 2;
+var prevPage = 3;
+let datas = [];
+
+async function request(page){
+   console.log('nmbr',page)
+   let resul =  await fetch(`${API_BASE}/discover/movie?api_key=${API_KEY}&page=${page}`)
+   console.log(resul);
+   let data = await resul.json();
+  //  let boucl = nouvel.results;
+
+   datas.push({page, data:data.results})
+}
+
+
+function display(){
+   console.log(datas)
+   let boucl = datas.find((l)=> l.page == page)
+   if (page == 1) {
+      contr.innerHTML = ''
+   }
+
+   for(let i = 0; i < boucl.data.length ;i++){
+      const maVar = document.createElement('A');
+      maVar.href = `details.html#${boucl.data[i].id}`;
+      maVar.classList.add('cadre')
+      maVar.innerHTML = `
+      <img src="${IMG_URL+boucl.data[i].poster_path}" alt="">
+      <div class="tittle">
+      <p>${boucl.data[i].original_title}</p>
+      <span class="green">${boucl.data[i].release_date}</span>
+      </div>
+      <div class="percent">
+      <span class="green">9.8%</span>
+      </div>
+      `;
+     contr.appendChild(maVar)
+  }
+ }
+
+
 window.addEventListener('DOMContentLoaded',async() =>{
  
-    const contr = document.querySelector('.container')
-    const next = document.querySelector('.next')
-    const prev = document.querySelector('.prev')
-    const current = document.querySelector('.current')
-    let API_KEY = `e23e367891fdc74e9e44aede23878548`
-    let API_BASE = `https://api.themoviedb.org/3`
-    const IMG_URL = 'https://image.tmdb.org/t/p/w500'
-    let count = 1;
-    let page = 1;
-    var curentPage = 1;
-    var nextPage = 2;
-    var prevPage = 3;
- 
-    async function request(page){
-        console.log('nmbr',page)
-       let resul =  await fetch(`${API_BASE}/discover/movie?api_key=${API_KEY}&page=${page}`)
-       console.log(resul);
-       let nouvel = await resul.json();
-       let boucl = nouvel.results;
-       console.log(boucl);
-       
-      for(let i = 0; i < boucl.length ;i++){
- 
-        const maVar = document.createElement('A');
-        maVar.href = `details.html#${boucl[i].id}`;
-        maVar.classList.add('cadre')
-        maVar.innerHTML = `
-        <img src="${IMG_URL+boucl[i].poster_path}" alt="">
-        <div class="tittle">
-        <p>${boucl[i].original_title}</p>
-        <span class="green">${boucl[i].release_date}</span>
-        </div>
-        <div class="percent">
-        <span class="green">9.8%</span>
-        </div>
-        `;
-       contr.appendChild(maVar)
-    }
-    }
-    request(page);
-    function actionSuivant(event){
+      await request(page)
+      display(request)
     
-    }
-    function actionSuivant(event){
+   //  function actionSuivant(event){
     
-    }
+   //  }
+   //  function actionSuivant(event){
+    
+   //  }
    
-    next.addEventListener('click',(e)=>{
-     contr.innerHTML = " ";
-     if(e.target){
-        console.log(page);
-       let id = e.target.id;
-       console.log(id);
-       page+= parseInt(id)
-       console.log('plus', page);
-       request(page);
-    }
+   //  next.addEventListener('click',(e)=>{
+   //   contr.innerHTML = " ";
+   //   if(e.target){
+   //      console.log(page);
+   //     let id = e.target.id;
+   //     console.log(id);
+   //     page+= parseInt(id)
+   //     console.log('plus', page);
+   //     request(page);
+   //  }
  
-    })
+   //  })
  
-    prev.addEventListener('click',(e)=>{
+   //  prev.addEventListener('click',(e)=>{
 
-        contr.innerHTML = " ";
-       if(e.target){
-         console.log('demo',page);
-         let net = e.target.id;
-        //console.log(net);
-         page-= parseInt(net)
-        //console.log('moins',page)
-         request(page);
-      }
+   //      contr.innerHTML = " ";
+   //     if(e.target){
+   //       console.log('demo',page);
+   //       let net = e.target.id;
+   //      //console.log(net);
+   //       page-= parseInt(net)
+   //      //console.log('moins',page)
+   //       request(page);
+   //    }
    
-      })
+   //    })
      
-   
+
+    
+
+
+
+
+
  })
