@@ -14,10 +14,11 @@ container.addEventListener('scroll', (e)=>{
   let scrollHeight = e.currentTarget.scrollHeight;
   let clientHeight = e.currentTarget.clientHeight;
   let clientWidth = e.currentTarget.clientWidth;
-  console.log('result',e.currentTarget.scrollTop + e.currentTarget.clientHeight)
+  console.log('if',e.currentTarget.scrollTop + e.currentTarget.clientHeight - 20)
+  console.log('scrollHeight - 20',e.currentTarget.scrollHeight - 20)
   console.log('scrollHeight :',e.currentTarget.scrollHeight,'scrollTop :',e.currentTarget.scrollTop,'ClientHeight', e.currentTarget.clientHeight,'ClientWidth', e.currentTarget.clientWidth)
   
-  if(e.currentTarget.clientHeight + e.currentTarget.scrollTop >= e.currentTarget.clientHeight ) {
+  if(e.currentTarget.clientHeight + e.currentTarget.scrollTop >= e.currentTarget.scrollHeight - 20) {
     count = count == tabElement.length -1 ? 0 : count+1
     console.log(count)
     container.textContent += tabElement[count]

@@ -5,9 +5,34 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learn Javascript</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+    <form class="form">
+        <div class="Container">
+            <label for="nom">Nom</label>
+            <input type="text" minlength="4" maxlength="15" size=15" id="nom">
+            <p class="nom"></p>
+        </div>
+        <div class="Container">
+            <label for="prenom">Prenom</label>
+            <input type="text" id="prenom" size="10">
+            <p class="Prenom"></p>
+        </div>
+        <div class="Container">
+          <label for="">Sexe</label><br>
+          <label for="feminin">Feminin</label><input type="radio" name="masculin" id="feminin">
+          <label for="masculin">Masculin</label><input type="radio" name="masculin" id="masculin">
+        </div>
+        <div class="descrition">
+            <p class="descri"></p>
+            <label for="description">Description</label><br>
+            <textarea name="description" id="description" style="resize: none;" minlength="4" maxlength="150"  cols="30" rows="10"></textarea>
+        </div>
+        <div class="btn">
+            <button>Envoyer</button>
+        </div>
+    </form>
   <script src="script.js"></script>
 </body>
 </html>
