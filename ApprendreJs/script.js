@@ -273,3 +273,10 @@ function facto(num){
 }
 
 console.log(facto(1));
+
+
+let tab = ['mangue','action']
+
+for (const key of tab) {
+    console.log(tab.indexOf(key))
+}
