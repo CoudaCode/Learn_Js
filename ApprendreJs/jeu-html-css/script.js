@@ -21,10 +21,10 @@
      callback(tab[i])
     }
   }
- 
-  /*
-  //Creation d'element html en entrant des donnés dans le input
-//  A>div>contenu>{"width":"200px", "height":"200px","backgroundColor":"red","textAlign":"center"}
+
+/*
+//Creation d'element html en entrant des donnés dans le input
+//A>div>contenu>{"width":"200px", "height":"200px","backgroundColor":"red","textAlign":"center"}
 
 
 inp = document.querySelector("input");

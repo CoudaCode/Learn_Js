@@ -199,84 +199,291 @@ NB: checker le fonctionnement des différents fonctions présente sur l'objet "M
 
 // console.log(mathema.Abs(['a']))
 
-
-
-// const form = document.querySelector('.form')
-// const textErrorNom = document.querySelector('.nom')
-// const textErrorPrenom = document.querySelector('.Prenom')
-// let nom = document.getElementById(`nom`)
-// let Prenom = document.getElementById('prenom')
-// let description = document.getElementById('description')
-// let descri = document.querySelector('.descri')
-
+// const form = document.querySelector(".form");
+// const textErrorNom = document.querySelector(".nom");
+// const textErrorPrenom = document.querySelector(".Prenom");
+// let nom = document.getElementById(`nom`);
+// let Prenom = document.getElementById("prenom");
+// let description = document.getElementById("description");
+// let descri = document.querySelector(".descri");
+// let btn = document.querySelector(".btn button");
+// console.log(btn);
 // let Obj = {
-//     nomTest : true,
-//     PrnomTest : true,
-//     DescripTest : true
+//   Name: false,
+//   LastName: false,
+//   Description: false,
+// };
+
+// nom.addEventListener("input", (e) => {
+//   nomTaille = e.target.value.length;
+//   if (e.target.value.includes(" ") || nomTaille >= 15) {
+//     Obj.Name = false;
+//     console.log("ok");
+//     nom.style.outline = "2px solid red";
+//     textErrorNom.innerHTML ="Desole vous avez atteint le nombre maxi de caratère";
+//   } else{
+    
+//     Obj.Name = true;
+//     nom.style.outline = "none";
+//     textErrorNom.innerHTML = "";
+//   }
+//   checkValue()
+// });
+
+// Prenom.addEventListener("input", (e) => {
+//   prenomTaille = e.target.value.trim().split(" ");
+//   if (prenomTaille.length >= 3) {
+//     Obj.LastName = false;
+//     console.log("ok");
+//     Prenom.style.outline = "2px solid red";
+//     textErrorPrenom.innerHTML =
+//       "Desole vous avez atteint le nombre maxi de caratère";
+//   } else {
+//     Obj.LastName = true;
+//     Prenom.style.outline = "none";
+//     textErrorPrenom.innerHTML = "";
+//   }
+//   checkValue()
+// });
+
+// description.addEventListener("input", (e) => {
+//   descripTaille = e.target.value.trim().length;
+//   if (descripTaille > 10) {
+//     Obj.Description = false;
+//     e.target.value = e.target.value.slice(0, 10);
+//     description.style.outline = "2px solid red";
+//     descri.innerHTML = "Desole vous avez atteint le nombre maxi de caratère";
+//   } else {
+//     Obj.Description = true;
+//     description.style.outline = "none";
+//     descri.innerHTML = "";
+//   }
+//   checkValue()
+// });
+
+//  function checkerValue(obj){
+//     console.log(obj.DescripTest)
+
+//     if (obj.nomTest == true && obj.PrnomTest == true && obj.DescripTest == true){
+//       console.log(btn)
+//       btn.style.display ="block"
+//     }else{
+//       btn.style.display ="none"
+//     }
 // }
 
-// nom.addEventListener('input', (e)=>{
-//   let verif = true; 
-//         nomTaille = e.target.value.length
-//         if(e.target.value.includes(' ') || nomTaille >= 15){
-//           verif = false;
-//           console.log('ok')
-//           nom.style.outline = '2px solid red';
-//           textErrorNom.innerHTML ="Desole vous avez atteint le nombre maxi de caratère";
-//         }else{
-//           nom.style.outline = 'none'
-//           textErrorNom.innerHTML ="";
-//           verif = true;
-//         }
-//       console.log(verif);
-//   })
+// function checkValue() {
+//   let dash = Object.values(Obj);
 
-// Prenom.addEventListener('input', (e)=>{
-//     prenomTaille = e.target.value.trim().split(' ')
-//   if(prenomTaille.length >= 3){
-//     console.log('ok')
-//     Prenom.style.outline = '2px solid red';
-//     textErrorPrenom.innerHTML ="Desole vous avez atteint le nombre maxi de caratère";
-//   }else{
-//     Prenom.style.outline = 'none';
-//     textErrorPrenom.innerHTML ="";
-//   }
-//   })
+//   btn.style.display = dash.every((lem) => lem) ? "block" : "none"
 
-// description.addEventListener('input', (e)=>{
-//     descripTaille = e.target.value.trim().length
-//     if(descripTaille > 10){
-//       e.target.value = e.target.value.slice(0, 10)
-//       description.style.outline = '2px solid red';
-//       descri.innerHTML ="Desole vous avez atteint le nombre maxi de caratère";
-//     }else{
-//       description.style.outline = 'none';
-//       descri.innerHTML = "";
-//     }
+  // if (dash.every((lem) => lem)){
+  //       btn.style.display ="block"
+  //     }else{
+  //       btn.style.display ="none"
+  //     }
+//   console.log(dash);
+// }
+
+// btn.addEventListener('click', (e)=>{
+//   console.log(e)
 // })
 
-// function affiche(obj){
+// function facto(num){
+
+//        if(num === 0 || num === 1){
+//         return 1
+//        }else{
+
+//          return facto(num - 1)* num
+
+//        }
 
 // }
 
+// console.log(facto(1));
 
-function facto(num){
+// let tab = ['mangue','action']
+
+// for (const key of tab) {
+//     console.log(tab.indexOf(key))
+// }
+
+
+// [[10,12], [15,4],[20,16]]
+
+
+// function statistic(tab){
+//  let effCumule = tab.reduce((acc, x)=> acc + x[1], 0)
+//  let maxeff = Math.max(...tab.map((a) => a[1]))
+
+//   let indexMax = tab.indexOf((a)=> a == maxeff)
+
+//  console.log(maxeff, indexMax); 
+
+
+
+// }
+
+// statistic([[10,12], [15,4],[20,16]])
+
+
+// function matrix(tab){
+//   let str = [];
+//   let taile = tab[0].length
+//   let dom = tab.flat().sort((a,b)=> a-b)
+
+//     while(dom.length > 0){
+//       let ash = dom.splice(0,taile)
+//         str.push(ash)
+        
+//     }
+//     return str
+// }
+
+// console.log(matrix([[-1,2,3],[5,-2,4]]))
+
+// function findLast(tab) {
+
+//     for (let i = 0; i < tab.length; i++) {
+//       console.log(tab[i+1]);
+//       if(tab[i] > tab[i+1]){
+//           return tab[i]
+//         }
+//       }
+   
+// }
+
+// console.log(findLast([1,3,4,1]))
+
+
+
+// function stat(tableau){
+
+  
+//   let effcumule = tableau.reduce((even,a)=> even + a[1], 0)
+//   let maxeff = Math.max(...tableau.map((e)=> e[1]))
+//   let indexmaxeff = tableau.findIndex((e)=> e[1] == maxeff)
+//   let modal = tableau[indexmaxeff]
+
+//   let moyenne = (effcumule/tableau.length)
+
+//   let tabfrequence = tableau.map((lem)=> parseFloat(((lem[1]*100)/effcumule).toFixed(2)))
+
+//   let percent = tabfrequence.reduce((even,a)=> even + a, 0)
+
+//   let effecifCumulé = [tableau[0][1]];
+//   console.log(effecifCumulé);
+
+//     for (let i = 0; i <= tableau.length; i++) {
+//       console.log(tableau[i]);
+//       // effecifCumulé.push(tableau[i][1] + tableau[i+1][1]);
+//     }
+  
+//   // console.log(effecifCumulé);
+//   // return `la serie statistique de données ${tableau} a pour classe modale ${modal} , pour frequence ne pourcentage le tableau ${tabfrequence}, la moyenne ${moyenne}`
+
+//   // console.log(percent);
+//   // console.log(tabfrequence)
+
+
+
+//   // console.log(moyenne)
+  
+//   // console.log(indexmaxeff)
+
+//   //  console.log(maxeff)
+
+//   // console.log(effcumule);
+
+//   // console.log(modal)
+
+
+
+// }
+
+// stat([[10,12], [15, 4], [20, 2],[70, 5]]);
+
+
+// function somPremier(nbr){
+//       if (nbr < 2) return 0
+
+//       let array = new Array(nbr-1).fill('a')
+//       let isPremier = !array.find((val, index)=> index > 1 && nbr%index == 0)
+//       console.log(nbr, isPremier);
+//       return (isPremier ? nbr : 0) +somPremier(nbr-1)  
+// }
+
+// console.log(somPremier(7))
+
+
+
+// function arrIndex(arr, idx){
+//   if (!Array.isArray(arr) || !Array.isArray(idx)) return -1
     
-       if(num === 0 || num === 1){
-        return 1
-       }else{
+//   let flatTAb = arr.flat ()
+//   let str = idx.map((a)=>{
+//       return flatTAb[a-1]
+//   })
+//   console.log(str.join(''))
 
-         return facto(num - 1)* num
+// }
 
-       }
+// console.log(arrIndex([
+//   ["m", "u", "b"],
+//   ["a", "s", "h"],
+//   ["i", "r", "1"]
+// ],
+// [1, 3, 5, 8]))
 
+
+
+// function rangeOfNumbers(startNum, EndNumb){
+//   if (startNum == EndNumb) return [EndNumb]    
+//   let tab = [startNum]
+//   console.log(typeof(tab));
+//   console.log(startNum);
+//   tab.push(rangeOfNumbers(startNum +1 , EndNumb))
+//   return  tab.flat()
+// }
+
+// console.log(rangeOfNumbers(1,5))
+// console.log(rangeOfNumbers(6,9))
+
+
+
+// // Sosie de la fonction Array.Maps
+
+// let checkString = class {
+//     constructor(str){
+//          this.str = str
+//     }
+//     Update(cb){
+//       let arr = [];  
+//       for (let i = 0; i < this.str.length; i++){
+//         let newValues = cb(this.str[i], i)
+//         console.log(newValues)
+//         arr.push(newValues)
+//       }
+//       return arr
+//     }
+// }
+
+
+// let Obj = new checkString([1,2,3,4,5,6,7,8,9,10])
+// let nexTable = Obj.Update((a, i)=> 2*a)
+
+// console.log(nexTable);
+
+
+
+function findAverage(array) {
+  // your code here
+  console.log(array)
+  if (array.length === 0) return 0
+  return array.reduce((a,x)=> a+ x,0) / array.length
 }
 
-console.log(facto(1));
+console.log(findAverage([]))
 
 
-let tab = ['mangue','action']
-
-for (const key of tab) {
-    console.log(tab.indexOf(key))
-}
