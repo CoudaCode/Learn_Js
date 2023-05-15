@@ -454,36 +454,43 @@ NB: checker le fonctionnement des différents fonctions présente sur l'objet "M
 
 // // Sosie de la fonction Array.Maps
 
-// let checkString = class {
-//     constructor(str){
-//          this.str = str
-//     }
-//     Update(cb){
-//       let arr = [];  
-//       for (let i = 0; i < this.str.length; i++){
-//         let newValues = cb(this.str[i], i)
-//         console.log(newValues)
-//         arr.push(newValues)
-//       }
-//       return arr
-//     }
-// }
+let checkString = class {
+    constructor(str){
+         this.str = str
+    }
+    Update(cb){
+      let arr = [];  
+      for (let i = 0; i < this.str.length; i++){
+        let newValues = cb(this.str[i], i)
+        console.log(newValues)
+        arr.push(newValues)
+      }
+      return arr
+    }
+}
 
 
-// let Obj = new checkString([1,2,3,4,5,6,7,8,9,10])
-// let nexTable = Obj.Update((a, i)=> 2*a)
+let Obj = new checkString([1,2,3,4,5,6,7,8,9,10])
+let nexTable = Obj.Update((a, i)=> 2*a)
 
-// console.log(nexTable);
+console.log(nexTable);
 
 
 
-function findAverage(array) {
+function findAverage(array){
   // your code here
   console.log(array)
   if (array.length === 0) return 0
   return array.reduce((a,x)=> a+ x,0) / array.length
 }
 
+
 console.log(findAverage([]))
+
+
+
+
+
+
 
 
