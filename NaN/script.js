@@ -468,21 +468,21 @@ function contreSplit(stg) {
 
 // console.log(multiply(1, 10));
 
-// function oppOrInv(a,b) {
-//       if(a+b == 0){
-//           return 'oppose'
-//       }else if( a*b == 1){
-//           return 'inverse'
-//       }else{
-//         return 'ok'
-//       }
-// }
+function oppOrInv(a,b) {
+      if(a+b == 0){
+          return 'oppose'
+      }else if( a*b == 1){
+          return 'inverse'
+      }else{
+        return 'ok'
+      }
+}
 
-// console.log(oppOrInv(1,-1))
+console.log(oppOrInv(1,-1))
 
-// console.log(oppOrInv(2, 1/2))
+console.log(oppOrInv(2, 1/2))
 
-// console.log(oppOrInv(1,2))
+console.log(oppOrInv(1,2))
 
 // function uppercaseCount(sentence) {
 //       let num = 0;
@@ -526,28 +526,28 @@ function contreSplit(stg) {
 //   return nbr * fact(nbr-1);
 // }
 
-progress = document.querySelector(".progress");
-child = document.querySelector(".child");
-btn = document.querySelector(".button");
-let parentLength = 200;
-let countSecond = 500;
-let count = 0;
+// progress = document.querySelector(".progress");
+// child = document.querySelector(".child");
+// btn = document.querySelector(".button");
+// let parentLength = 200;
+// let countSecond = 500;
+// let count = 0;
 
-window.addEventListener("DOMContentLoaded", function () {
-        btn.addEventListener('click',function(){
+// window.addEventListener("DOMContentLoaded", function () {
+//         btn.addEventListener('click',function(){
           
-          progress.style.width = `${parentLength}px`
-          let selfWidth = parentLength/countSecond
-          let timer = setInterval(function () {
-            count++;
-            if (count > countSecond) {
-              clearInterval(timer);
-            } else {
-              child.style.width = `${count*selfWidth}px`
-            }
-          },5000/countSecond);
-        })
-});
+//           progress.style.width = `${parentLength}px`
+//           let selfWidth = parentLength/countSecond
+//           let timer = setInterval(function () {
+//             count++;
+//             if (count > countSecond) {
+//               clearInterval(timer);
+//             } else {
+//               child.style.width = `${count*selfWidth}px`
+//             }
+//           },5000/countSecond);
+//         })
+// });
 
 
 
