@@ -468,7 +468,7 @@ function contreSplit(stg) {
 
 // console.log(multiply(1, 10));
 
-function oppOrInv(a,b) {
+function oppOrInv(a,b){
       if(a+b == 0){
           return 'oppose'
       }else if( a*b == 1){
@@ -478,7 +478,7 @@ function oppOrInv(a,b) {
       }
 }
 
-console.log(oppOrInv(1,-1))
+  console.log(oppOrInv(1,-1))
 
 console.log(oppOrInv(2, 1/2))
 

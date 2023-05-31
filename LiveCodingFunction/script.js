@@ -183,10 +183,10 @@ Créer la fonction 'parity' qui fera la comparaison entre les éléments pairs e
 // console.log(countVowels('Axscvqcs,cdsjgdkk123'))
 
 // function countnumbers(chaine){
-//    if (typeof(chaine) !== 'string') {
+//    if (typeof(chaine) !== 'string'){
 //        return -1
 //    }else{
-//        let num = chaine.split('') ;
+//        let num = chaine.split('');
 //        let numbr = num.filter(lem => !isNaN(lem))
 //    }
 //   }
